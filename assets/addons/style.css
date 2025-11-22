@@ -1,0 +1,206 @@
+.multiImagePickerContainer {
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+}
+
+.multiImagePickerContainer > div.card {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 120px;
+  height: 90px;
+}
+
+.cardsize {
+  width: 100 px;
+}
+.multiImagePickerContainer .card_uploadnew {
+  display: flex;
+}
+.multiImagePickerContainer .card_uploadnew label {
+  flex: 1;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  font-size: 45px;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.multiImagePickerContainer > div.card img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.cards {
+  text-align: center;
+  size: 300px;
+}
+
+.small-padding {
+  padding: 0.25rem 0.5rem;
+}
+
+.closebutton {
+  position: absolute;
+  left: 100;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  color: white;
+  opacity: 0;
+}
+.card:hover .closebutton {
+  opacity: 100;
+  background-color: rgb(250, 65, 65);
+}
+
+.table .thead-light .active[data-sort]::after {
+  content: url("data:image/svg+xml;utf8,<svg width='6' height='10' viewBox='0 0 6 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M3 0L6 4H0L3 0ZM3 10L0 6H6L3 10Z' fill='%234d7bca'/></svg>");
+  margin-left: 0.25rem;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 19px;
+  height: 19px;
+  margin: 0px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.lds-dual-ring2 {
+  margin: 0 auto;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.lds-dual-ring2:after {
+  content: " ";
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 3px;
+  border-radius: 50%;
+  border: 3px solid #6c2835;
+  border-color: #6c2835 transparent #6c2835 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.lds-dual-ring3 {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+}
+.lds-dual-ring3:after {
+  content: " ";
+  display: block;
+  width: 19px;
+  height: 19px;
+  margin: 0px;
+  border-radius: 50%;
+  border: 2px solid #6c2835;
+  border-color: #6c2835 transparent #6c2835 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.lds-dual-ring4 {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+.lds-dual-ring4:after {
+  content: " ";
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 0px;
+  border-radius: 50%;
+  border: 2px solid #6c2835;
+  border-color: #6c2835 transparent #6c2835 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.lds-dual-ring5 {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+}
+.lds-dual-ring5:after {
+  content: " ";
+  display: block;
+  width: 19px;
+  height: 19px;
+  margin: 0px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  border-color: #000 transparent #000 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+.relative {
+  position: relative;
+}
+
+.nopadding {
+  padding: 0;
+}
+
+.input-with-button-container {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  padding: 8px;
+  flex-grow: 1; /* Fill remaining space */
+}
+
+.submit-button {
+  background-color: #f5365c; /* Rose color */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.cancel-button {
+  background-color: #7c7b7b; /* Rose color */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.quantity-change {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.quantity-edit {
+  background-color: #f5365c;
+  color: #fff;
+  padding: 5px 15px; 
+  cursor: pointer;
+
+}

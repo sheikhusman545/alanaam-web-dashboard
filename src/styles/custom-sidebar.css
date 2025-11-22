@@ -1,0 +1,232 @@
+/* Custom Sidebar Styles - Fix alignment and improve appearance */
+
+/* Fix main content alignment when sidebar is open - removed margin-left, using left positioning instead */
+
+/* Professional Sidebar Styling */
+.sidenav {
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* Sidebar Header - More Professional */
+.sidenav-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidenav-header .navbar-brand-img {
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.sidenav-header .navbar-brand:hover .navbar-brand-img {
+  transform: scale(1.05);
+}
+
+/* Sidebar Navigation Links - Modern Look */
+.sidenav .navbar-nav .nav-link {
+  padding: 0.75rem 1.5rem;
+  margin: 0.25rem 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #525f7f;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidenav .navbar-nav .nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.sidenav .navbar-nav .nav-link:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  transform: translateX(4px);
+}
+
+.sidenav .navbar-nav .nav-link:hover::before {
+  transform: scaleY(1);
+}
+
+.sidenav .navbar-nav .nav-link.active {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  color: #667eea;
+  font-weight: 600;
+}
+
+.sidenav .navbar-nav .nav-link.active::before {
+  transform: scaleY(1);
+}
+
+/* Sidebar Icons */
+.sidenav .navbar-nav .nav-link i {
+  width: 20px;
+  text-align: center;
+  margin-right: 12px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.sidenav .navbar-nav .nav-link:hover i {
+  transform: scale(1.1);
+  color: #667eea;
+}
+
+.sidenav .navbar-nav .nav-link.active i {
+  color: #667eea;
+}
+
+/* Collapse/Submenu Items */
+.sidenav .navbar-nav .nav .nav-link {
+  padding-left: 3rem;
+  font-size: 0.9rem;
+  margin: 0.15rem 0.5rem;
+}
+
+.sidenav .navbar-nav .nav .nav-link:hover {
+  background: rgba(102, 126, 234, 0.08);
+  transform: translateX(2px);
+}
+
+/* Sidebar Toggler - More Visible */
+.sidenav-toggler {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.sidenav-toggler:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.sidenav-toggler.active {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.sidenav-toggler-line {
+  background: #ffffff;
+  height: 2px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Scrollbar Styling */
+.sidenav .scrollbar-inner {
+  padding: 0.5rem 0;
+}
+
+/* Divider */
+.sidenav hr {
+  border-color: rgba(0, 0, 0, 0.1);
+  margin: 1rem 1.5rem;
+}
+
+/* Smooth Transitions */
+.sidenav,
+.sidenav .navbar-nav .nav-link,
+.main-content {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Backdrop for Mobile */
+.backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+/* Prevent whole page scrolling - only content should scroll */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+/* Navbar should be fixed at top - no scroll */
+.main-content > .navbar-top,
+.main-content > nav {
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Content area wrapper - this should scroll */
+.main-content > .main-content-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+/* Ensure content inside can grow and scroll */
+.main-content > .main-content-body > * {
+  min-height: min-content;
+}
+
+/* Footer should be at bottom - no scroll */
+.main-content > .footer,
+.main-content > footer {
+  flex-shrink: 0;
+}
+
+/* Fix for content area when sidebar is open - use margin-left instead of fixed positioning */
+.sidenav.fixed-left + .main-content {
+  margin-left: 62px;
+}
+
+body.g-sidenav-pinned .sidenav.fixed-left + .main-content {
+  margin-left: 250px;
+}
+
+body:not(.g-sidenav-pinned):not(.g-sidenav-show) .sidenav.fixed-left + .main-content {
+  margin-left: 62px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1199.98px) {
+  .sidenav {
+    transform: translateX(-100%);
+  }
+  
+  .g-sidenav-pinned .sidenav {
+    transform: translateX(0);
+  }
+  
+  .sidenav.fixed-left + .main-content {
+    margin-left: 0 !important;
+  }
+  
+  body.g-sidenav-pinned .sidenav.fixed-left + .main-content {
+    margin-left: 0 !important;
+  }
+  
+  body:not(.g-sidenav-pinned):not(.g-sidenav-show) .sidenav.fixed-left + .main-content {
+    margin-left: 0 !important;
+  }
+}
+
